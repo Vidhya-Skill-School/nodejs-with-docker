@@ -1,0 +1,13 @@
+services:
+  ankit-nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ankit-nodeapp  # Docker image name
+    container_name: ankit-nodejsapp  # Docker container name
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: npm start

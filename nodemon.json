@@ -1,0 +1,6 @@
+{
+  "type": "json",
+  "watch": ["./"],
+  "ext": "js,json",
+  "exec": "node main.js"
+}

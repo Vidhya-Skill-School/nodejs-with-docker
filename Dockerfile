@@ -1,14 +1,20 @@
-# Choose a package
+# Use the official Node.js image as the base image
 FROM node:alpine
 
 # Setup work directory
 WORKDIR /app
 
-# Copy all files to the working directory
-COPY . .
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
-# Start the app
-CMD [ "npm", "run", "start" ]
+# Copy all files to the working directory
+COPY . .
+
+# Exposing a port
+EXPOSE 3000
+
+# Start the app with nodemon
+CMD [ "npm","run", "start" ]

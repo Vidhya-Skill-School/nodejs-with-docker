@@ -1,11 +1,11 @@
 # Choose a package
-FROM nodejs
+FROM node:alpine
 
 # Setup work directory
 WORKDIR /app
 
-# Feel free to use /app or .
-COPY  . .
+# Copy all files to the working directory
+COPY . .
 
 # Install dependencies
 RUN npm install
